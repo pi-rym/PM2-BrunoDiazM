@@ -24,6 +24,7 @@ header .logotipo {
   color: #e50914;
   font-size: 45px;
   margin-right: 10px;
+  text-shadow: 2px 0px 2px rgba(255, 255, 255, 0.6);
 }
 
 header nav a {
@@ -94,12 +95,13 @@ header nav a.activo {
 
 .text-info {
   text-align: center;
-  font-size: 100px;
-  color: red; /* Color rojo para el h3 */
-  margin-top: 100px; /* Ajusta el margen superior del h3 según tus necesidades */
+  font-size: 60px;
+  color: #841c26;
+  margin-top: 25px;
+  text-shadow: 2px 0px 2px rgba(255, 255, 255, 0.6);
 }
 
-.footer {
+/* .footer {
   background-color: #141414;
   color: #fff;
   padding: 10px;
@@ -121,3 +123,11 @@ header nav a.activo {
   width: 30px;
   height: 30px;
 }
+
+.startingSection {
+  color: white;
+}
+
+.importantDates {
+  color: white;
+} */
