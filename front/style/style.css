@@ -48,7 +48,6 @@ header nav a.activo {
     url(../assets/imag/backdrop1.jpg);
   background-position: center center;
   background-size: cover;
-  margin-bottom: 10000em;
   display: flex;
   align-items: end;
 }
@@ -95,8 +94,9 @@ header nav a.activo {
 
 .text-info {
   text-align: center;
+  font-size: 100px;
   color: red; /* Color rojo para el h3 */
-  margin-top: 20px; /* Ajusta el margen superior del h3 según tus necesidades */
+  margin-top: 100px; /* Ajusta el margen superior del h3 según tus necesidades */
 }
 
 .footer {
