@@ -5,8 +5,8 @@ body {
 }
 
 header {
-  background-color: #5e0202;
-  color: #ffffff;
+  background-color: #000000;
+  color: #4300de;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -49,7 +49,7 @@ header h1 {
 
 .navigation ul li a {
   text-decoration: none;
-  color: #ffffff;
+  color: #4300de;
   font-weight: bold;
 }
 
