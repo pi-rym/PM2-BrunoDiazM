@@ -19,27 +19,25 @@ header .contenedor {
 }
 
 header .logotipo {
-  font-family: "Bebas Neue", cursive;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: normal;
   color: #e50914;
-  font-size: 40px;
+  font-size: 45px;
   margin-right: 10px;
 }
 
 header nav a {
   color: #aaa;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 25px;
+  font-size: 18px;
+  display: inline-block;
+  line-height: 30px;
 }
 
 header nav a:hover,
 header nav a.activo {
   color: #fff;
-}
-
-.icono {
-  width: 40px; /* La anchura se ajustará automáticamente en relación con el tamaño del h1 */
-  height: 40px;
 }
 
 .pelicula-principal {
@@ -97,6 +95,8 @@ header nav a.activo {
 
 .text-info {
   text-align: center;
+  color: red; /* Color rojo para el h3 */
+  margin-top: 20px; /* Ajusta el margen superior del h3 según tus necesidades */
 }
 
 .footer {
