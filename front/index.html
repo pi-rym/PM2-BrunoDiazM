@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,33 +8,49 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <header class="header">
-      <h1>FilmHouse</h1>
-      <div class="actions">
-        <nav class="navigation">
-          <ul class="links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="./pages/history.html">Historia del cine</a></li>
-            <li><a href="./pages/webs.html">Webs recomendadas</a></li>
-          </ul>
-          <div>
-            <input type="search" placeholder="buscar..." />
-          </div>
+    <header>
+      <div class="contenedor">
+        <h1 class="logotipo">FilmHouse</h1><img src="./assets/imag/claqueta.png" alt="Icono" class="icono">
+        <nav>
+          <a href="#" class="activo">Inicio</a>
+          <a href="#">Historia del cine</a>
+          <a href="#">Webs recomendadas</a>
         </nav>
+        <div>
+        <input type="search" placeholder="buscar..." />
+      </div>
       </div>
     </header>
+
     <main>
-      <h2 class="text-info">Todas las películas</h2>
+      <div class="pelicula-principal">
+        <div class="contenedor">
+          <h2 class="titulo">Avengers: Endgame</h2>
+          <p class="descripcion">
+            Después de los eventos devastadores de "Avengers: Infinity War", el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deberán reunirse una vez más para intentar detenerlo y restaurar el orden en el universo de una vez por todas.
+          </p>
+          <button role="button" class="boton">
+            <i class="fas fa-play"></i>Proximamente
+          </button>
+          <button role="button" class="boton">
+            <i class="fas fa-info-circle"></i>Más información
+          </button>
+        </div>
+      </div>
+    </main>
+    <main>
+      <h3 class="text-info">Todas las películas</h3>
       <section id="allMovies"></section>
     </main>
     <footer class="footer">
       <div class="p">Todos los derechos reservados &copy; <span id="year">FilmHouse</span>
       <div class="social-links">
-        <a href="#"><img src="./assets/imag/ig.png" alt="Instagram" /></a>
-        <a href="#"><img src="./assets/imag/yt111.png" alt="YouTube" /></a>
+        <a href="#"><img src="./assets/imag/instagram.png" alt="Instagram" /></a>
+        <a href="#"><img src="./assets/imag/facebook.png" alt="YouTube" /></a>
       </div>
     </footer>
     <script src="./scripts/tempData.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
-</html>
+</html> 
+ 
