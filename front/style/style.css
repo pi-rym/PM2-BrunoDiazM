@@ -131,3 +131,29 @@ header nav a.activo {
 .importantDates {
   color: white;
 } */
+
+.card-container {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.card {
+  width: 250px;
+  margin-right: 16px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 16px;
+  text-align: center;
+}
