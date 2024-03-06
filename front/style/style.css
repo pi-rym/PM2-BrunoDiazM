@@ -10,6 +10,11 @@ body {
 
 header {
   padding: 30px 0;
+  height: 100%;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; */
 }
 
 header .contenedor {
@@ -31,13 +36,12 @@ header nav a {
   color: #aaa;
   text-decoration: none;
   margin-right: 25px;
-  font-size: 18px;
+  font-size: 21px;
   display: inline-block;
   line-height: 30px;
 }
 
-header nav a:hover,
-header nav a.activo {
+header nav a:hover {
   color: #fff;
 }
 
@@ -101,59 +105,51 @@ header nav a.activo {
   text-shadow: 2px 0px 2px rgba(255, 255, 255, 0.6);
 }
 
-/* .footer {
-  background-color: #141414;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-.social-links {
-  margin-top: 10px;
-}
-
-.social-links a {
-  margin-right: 10px;
-}
-
-.social-links img {
-  width: 30px;
-  height: 30px;
-}
-
-.startingSection {
-  color: white;
-}
-
-.importantDates {
-  color: white;
-} */
-
-.card-container {
+section#allMovies {
   display: flex;
-  overflow-x: scroll;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 500px;
 }
-
 .card {
-  width: 250px;
-  margin-right: 16px;
+  margin-left: 30px;
+
+  width: 350px;
+  height: 450px;
+  background-color: #310106;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
 }
-
 .card:hover {
-  transform: scale(1.05);
+  border: 2px solid red;
+  box-shadow: 4px 4px 4px red;
 }
-
 .card-image {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
+  width: 80%;
+  height: 380px;
+  transition: 400ms all ease-in-out;
+}
+.card-image:hover {
+  transform: scale(1.1);
+}
+.card-info {
+  width: 88%;
+  height: auto;
+  color: white;
+  margin: -40px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.534);
+  visibility: hidden;
+  text-align: center;
+  border-radius: 10px;
 }
 
-.card-info {
-  padding: 16px;
-  text-align: center;
+.card:hover .card-info {
+  transform: translateY(-35px);
+  transition: all ease-in-out 0.5s;
+  visibility: visible;
 }
