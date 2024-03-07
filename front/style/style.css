@@ -113,7 +113,6 @@ section#allMovies {
 }
 .card {
   margin-left: 30px;
-
   width: 350px;
   height: 450px;
   background-color: #310106;
@@ -129,8 +128,8 @@ section#allMovies {
   box-shadow: 4px 4px 4px red;
 }
 .card-image {
-  width: 80%;
-  height: 380px;
+  width: 85%;
+  height: 350px;
   transition: 400ms all ease-in-out;
 }
 .card-image:hover {
@@ -153,3 +152,5 @@ section#allMovies {
   transition: all ease-in-out 0.5s;
   visibility: visible;
 }
+
+
