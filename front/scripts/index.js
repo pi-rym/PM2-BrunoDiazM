@@ -23,3 +23,5 @@ tempData.forEach((movie) => {
   card.appendChild(info);
   allMoviesSection.appendChild(card);
 });
+
+$.get("https://students-api.2.us-1.fl0.io/movie", (data) => data.forEach(movie));

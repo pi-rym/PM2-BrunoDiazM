@@ -101,7 +101,8 @@ header nav a:hover {
   text-align: center;
   font-size: 60px;
   color: #841c26;
-  margin-top: 25px;
+  margin-top: 20px;
+  margin-bottom: 40px;
   text-shadow: 2px 0px 2px rgba(255, 255, 255, 0.6);
 }
 
@@ -109,10 +110,10 @@ section#allMovies {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 500px;
+  margin-bottom: 100px;
 }
 .card {
-  margin-left: 30px;
+  margin-left: 40px;
   width: 350px;
   height: 450px;
   background-color: #310106;
@@ -121,8 +122,9 @@ section#allMovies {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 30px;
 }
+
 .card:hover {
   border: 2px solid red;
   box-shadow: 4px 4px 4px red;
@@ -152,5 +154,3 @@ section#allMovies {
   transition: all ease-in-out 0.5s;
   visibility: visible;
 }
-
-
