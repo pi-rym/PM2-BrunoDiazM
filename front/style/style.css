@@ -1,67 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 body {
   background-color: #141414;
   font-family: "Open Sans", sans-serif;
 }
 
-.contenedor {
-  width: 90%;
-  margin: auto;
+/* GENERALES */
+h3 {
+  font-size: 50px;
+  margin: 2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-header {
-  padding: 30px 0;
-  height: 100%;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%; */
-}
-
-header .contenedor {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+/* ENCABEZADO Y NAVEGADOR */
 
 header .logotipo {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: normal;
   color: #e50914;
-  font-size: 45px;
+  font-size: 50px;
   margin-right: 10px;
   text-shadow: 2px 0px 2px rgba(255, 255, 255, 0.6);
 }
 
-header nav a {
-  color: #aaa;
+header .navbar a:hover {
+  color: #fff;
+}
+
+.contenedor {
+  position: absolute;
+  top: 200px;
+  right: 250px;
+  width: 90%;
+  padding: 200px;
+  color: white;
+  font-size: 20px;
+}
+
+.navbar {
+  background-color: rgb(27, 27, 27);
+  padding: 1rem;
+}
+.navbar .nav-item a {
+  color: white;
   text-decoration: none;
   margin-right: 25px;
-  font-size: 21px;
-  display: inline-block;
-  line-height: 30px;
+  font-size: 25px;
+  font-weight: 300;
+  transition: all 400ms ease-in-out;
+}
+.navbar .nav-item a:hover {
+  font-weight: 600;
+  color: red;
 }
 
-header nav a:hover {
-  color: #fff;
-}
-
+/* IMAGEN DE PORTADA PRINCIPAL */
 .pelicula-principal {
-  font-size: 17px;
-  min-height: 44em;
-  color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.267) 100%),
     url(../assets/imag/backdrop1.jpg);
   background-position: center center;
   background-size: cover;
-  display: flex;
-  align-items: end;
 }
-
-.pelicula-principal .contenedor {
-  margin: 0 auto;
-  margin-bottom: 6.25em;
-}
-
+/* COMPONENTES DE LA PORTADA PRINCIPAL */
 .pelicula-principal .titulo {
   font-weight: 600;
   font-size: 3.12em;
@@ -101,56 +102,51 @@ header nav a:hover {
   text-align: center;
   font-size: 60px;
   color: #841c26;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 25px;
   text-shadow: 2px 0px 2px rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
 }
+
+/* SECCION DE CARTAS "TODAS LAS PELICULAS" */
 
 section#allMovies {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 100px;
+  justify-content: space-evenly;
+  margin-bottom: 500px;
 }
 .card {
-  margin-left: 40px;
-  width: 350px;
-  height: 450px;
-  background-color: #310106;
-  transition: transform 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 30px;
+  background-color: transparent;
+  width: 380px;
+  height: 400px;
+  border-radius: 20px;
+  border: none;
 }
 
-.card:hover {
-  border: 2px solid red;
-  box-shadow: 4px 4px 4px red;
-}
 .card-image {
-  width: 85%;
-  height: 350px;
-  transition: 400ms all ease-in-out;
+  border-radius: 20px;
 }
 .card-image:hover {
-  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 2px -1px 20px red;
 }
 .card-info {
-  width: 88%;
+  width: 100%;
   height: auto;
   color: white;
-  margin: -40px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.534);
+  background-color: rgba(0, 0, 0, 0.609);
   visibility: hidden;
   text-align: center;
   border-radius: 10px;
+  font-size: 14px;
 }
 
 .card:hover .card-info {
-  transform: translateY(-35px);
+  transform: translateY(-120px);
   transition: all ease-in-out 0.5s;
   visibility: visible;
+}
+.titulo {
+  font-size: 22px;
 }
