@@ -1,6 +1,8 @@
 const allMoviesSection = document.getElementById("allMovies");
 
-$.get("https://students-api.2.us-1.fl0.io/movies", (data) => renderCards(card));
+$.get("https://students-api.2.us-1.fl0.io/movies", (data) => {
+  renderCards(data);
+});
 
 const renderCards = (data) => {
   data.forEach((movie) => {
