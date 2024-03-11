@@ -4,15 +4,15 @@
         const t = document.getElementById("allMovies");
         e.exports = (e) => {
           e.forEach((e) => {
-            const n = document.createElement("div");
-            n.classList.add("card");
-            const s = document.createElement("img");
-            s.classList.add("card-image"),
-              (s.src = e.poster),
-              (s.alt = e.title);
             const a = document.createElement("div");
-            a.classList.add("card-info"),
-              (a.innerHTML = `\n    <h4 class="titulo">${e.title} (${
+            a.classList.add("card");
+            const n = document.createElement("img");
+            n.classList.add("card-image"),
+              (n.src = e.poster),
+              (n.alt = e.title);
+            const s = document.createElement("div");
+            s.classList.add("card-info"),
+              (s.innerHTML = `\n    <h4 class="titulo">${e.title} (${
                 e.year
               })</h4>\n    <p class="director">${
                 e.director
@@ -23,23 +23,23 @@
               )}</p>\n    <p class="calificacion">Calificacion: ${
                 e.rate
               }</p>\n  `),
-              n.appendChild(s),
-              n.appendChild(a),
-              t.appendChild(n);
+              a.appendChild(n),
+              a.appendChild(s),
+              t.appendChild(a);
           });
         };
       },
     },
     t = {};
-  function n(s) {
-    var a = t[s];
-    if (void 0 !== a) return a.exports;
-    var c = (t[s] = { exports: {} });
-    return e[s](c, c.exports, n), c.exports;
+  function a(n) {
+    var s = t[n];
+    if (void 0 !== s) return s.exports;
+    var c = (t[n] = { exports: {} });
+    return e[n](c, c.exports, a), c.exports;
   }
   (() => {
-    const e = n(989);
-    $.get("https://students-api.2.us-1.fl0.io/movies", (t) => {
+    const e = a(989);
+    $.get("https://students-api.up.railway.app/movies", (t) => {
       e(t);
     });
   })();
