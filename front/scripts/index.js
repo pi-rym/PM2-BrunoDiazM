@@ -1,5 +1,3 @@
-const renderCards = require("./renderCards");
+const getFilms = require("./handler");
 
-$.get("https://students-api.up.railway.app/movies", (data) => {
-  renderCards(data);
-});
+getFilms();
