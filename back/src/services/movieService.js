@@ -1,14 +1,14 @@
 const axios = require('axios')
-const {Movies} = require('../types/Movies')
+const {Movies} = require('../types/class')
 
 
 async function getFilms() {
   try {
-    const response = await axios.get(
+    const {data} = await axios.get(
       "https://students-api.up.railway.app/movies"
     );
     const movies = data.map((movies) => new Movies(movies));
-    return response.data;
+    return movies;
   } catch (error) {
     throw new Error(error)
   }

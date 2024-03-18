@@ -1,7 +1,7 @@
 
 class Movies {
     constructor({ title, year, director, duration, genre, rate, poster }) {
-        if (!title || !year || !director) {
+        if (!title || !director || !poster) {
             throw new Error('Missing required fields');
          
         }
