@@ -12,6 +12,18 @@ function validateForm({
   return null;
 }
 
+function clearFormInputs() {
+  const inputs = document.querySelectorAll(
+    'input[type="text"], input[type="number"]'
+  );
+  inputs.forEach((input) => (input.value = ""));
+}
+document.addEventListener("DOMContentLoaded", function () {
+  const cleanerButton = document.getElementById("btnCleaner");
+  cleanerButton.addEventListener("click", clearFormInputs);
+});
+
+
 function createMovie(event) {
   event.preventDefault();
 
@@ -34,8 +46,12 @@ function createMovie(event) {
 
   axios
     .post("http://localhost:3000/movies", newMovie)
-    .then(() => alert('Pelicula agregada.'))
-    .catch((error) => alert('Error al crear la pelicula.'));
+    // .then(() => alert('Pelicula agregada.'))
+    .then(() => {
+      alert("Pelicula agregada.");
+      clearFormInputs(); // Llamar a la función para limpiar los inputs del formulario después de agregar la película
+    })
+    .catch((error) => alert("Error al crear la pelicula."));
 
 }
 
