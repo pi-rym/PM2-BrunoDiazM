@@ -46,10 +46,9 @@ function createMovie(event) {
 
   axios
     .post("http://localhost:3000/movies", newMovie)
-    // .then(() => alert('Pelicula agregada.'))
     .then(() => {
       alert("Pelicula agregada.");
-      clearFormInputs(); // Llamar a la función para limpiar los inputs del formulario después de agregar la película
+      clearFormInputs(); 
     })
     .catch((error) => alert("Error al crear la pelicula."));
 
