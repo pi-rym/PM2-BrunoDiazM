@@ -1,3 +1,40 @@
 body {
-  background-image: url(../assets/imag/fondo.jpg);
+  background-image: url("../assets/imag/fondo.jpg");
+}
+
+.container {
+  background-color: rgb(13, 12, 12); 
+  margin: auto; 
+  max-width: 800px; 
+  padding: 20px; 
+}
+
+.startingSection,
+.importantDates {
+  text-align: justify; 
+  margin-bottom: 20px; 
+}
+
+.startingSection {
+  background-color: rgb(
+    189,
+    187,
+    187
+  ); 
+  padding: 20px; 
+}
+
+.importantDates {
+  background-color: rgb(13, 12, 12); 
+  padding: 20px; 
+}
+
+
+h2,
+h3 {
+  color: #333; 
+}
+
+p {
+  line-height: 1.5; 
 }
