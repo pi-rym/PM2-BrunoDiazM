@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     getFilms();
     const submit = document.getElementById("movieForm");
     submit?.addEventListener("submit", createMovie);
-    console.log("Formulario para completar")
+    // console.log("Formulario para completar")
 })
 

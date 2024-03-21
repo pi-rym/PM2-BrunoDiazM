@@ -35,7 +35,7 @@ eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const createMovie = __webpack_require__(/*! ./createMovie */ \"./scripts/createMovie.js\");\r\nconst getFilms = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    getFilms();\r\n    const submit = document.getElementById(\"movieForm\");\r\n    submit?.addEventListener(\"submit\", createMovie);\r\n    console.log(\"Formulario para completar\")\r\n})\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const createMovie = __webpack_require__(/*! ./createMovie */ \"./scripts/createMovie.js\");\r\nconst getFilms = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    getFilms();\r\n    const submit = document.getElementById(\"movieForm\");\r\n    submit?.addEventListener(\"submit\", createMovie);\r\n    // console.log(\"Formulario para completar\")\r\n})\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 
