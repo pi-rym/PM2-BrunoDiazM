@@ -1,5 +1,5 @@
 body {
-  background-image: url(../assets/imag/fondo.jpg);
+  background-image: url(../assets/imag/wallpaperflare.com_wallpape.jpg);
 }
 .page-container {
   display: flex;
@@ -59,5 +59,6 @@ body {
   background-color: #410202;
 }
 
-
-
+input[name="genre[]"] {
+  margin: 0;
+}
