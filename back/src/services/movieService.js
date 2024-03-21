@@ -3,20 +3,25 @@ const {Movies} = require('../types/class')
 const Movie = require('../models/Movie')
 
 
-async function getFilms() {
-  const allMovies = await Movie.find();
-  return allMovies; 
-  // try {
-  //   const {data} = await axios.get(
-  //     "https://students-api.up.railway.app/movies"
-  //   );
-  //   const movies = data.map((movies) => new Movies(movies));
-  //   return movies;
-  // } catch (error) {
-  //   throw new Error(error)
-  // }
-}
+// async function getFilms() {
+//   const allMovies = await Movie.find();
+//   return allMovies; 
+// }
+
+// module.exports = {
+//     getFilms
+// }
 
 module.exports = {
-    getFilms
-}
+  async getFilms() {
+      const allMovies = await Movie.find();
+      return allMovies;
+  },
+  
+  postMovie: async (movie) => {
+    const newMovie = new Movie(movie);
+    const savedMovie = await newMovie.save();
+    return savedMovie;
+    
+  },
+};
