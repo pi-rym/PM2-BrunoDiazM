@@ -44,56 +44,80 @@
       </div>
     </header>
 
-
     <section class="page-container">
       <div class="card-session">
-        <form id="movieForm" action="">
-          <label for="">Titulo:</label>
-          <input type="text" id="title" name="title" placeholder="Ingresar titulo"  required />
-          <br><br>
+        <form id="movieForm">
+          <label for="title">Titulo:</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Ingresar titulo"
+            required />
+          <br /><br />
 
+          <label for="year">Año:</label>
+          <input
+            type="number"
+            id="year"
+            name="year"
+            placeholder="Ingresar año"
+            min="1850"
+            required />
+          <br /><br />
 
-          <label for="">Año:</label>
-          <input type="number"id="year" name="year" placeholder="Ingresar año" min="1850" required />
-          <br><br>
+          <label for="director">Director:</label>
+          <input
+            type="text"
+            id="director"
+            name="director"
+            placeholder="Ingresar director"
+            required />
+          <br /><br />
 
+          <label for="duration">Duracion:</label>
+          <input
+            type="text"
+            id="duration"
+            name="duration"
+            placeholder="Ingresar duracion"
+            required />
+          <br /><br />
 
-          <label for="">Director:</label>
-          <input type="text" id="director" name="director" placeholder="Ingresar director"  required />
-          <br><br>
+          <label for="genre">Genero:</label>
+          <input
+            type="text"
+            id="genre"
+            name="genre"
+            placeholder="Ingresar genero" />
+          <br /><br />
 
+          <label for="rate">Calificacion:</label>
+          <input
+            type="number"
+            step="any"
+            id="rate"
+            name="rate"
+            placeholder="Ingresar calificacion"
+            required />
+          <br /><br />
 
-          <label for="">Duracion:</label>
-          <input type="text" id="duration" name="duration" placeholder="Ingresar duracion"  required />
-          <br><br>
+          <label for="poster">Poster:</label>
+          <input
+            type="text"
+            id="poster"
+            name="poster"
+            placeholder="Ingresar URL del poster"
+            required />
+          <br /><br />
 
-
-          <label for="">Genero:</label>
-          <div id="options"></div>
-          <br><br>
-
-
-          <label for="">Calificacion:</label>
-          <input type="number" step="any" id="rate" name="rate" placeholder="Ingresar calificacion" required />
-          <br><br>
-
-
-          <label for="">Poster:</label>
-          <input type="text" id="poster" name="poster" placeholder="Ingresar URL del poster"  required />
-          <br><br>
-
-          <div class="divButtom">
-
-            <button type ="submit" value="enviar" id="btnSubmit">Crear Pelicula</button>
-            <button type ="button" id="btnCleaner">Limpiar Formulario</button>
-            
-          </div>
-
+          <input type="submit" value="Crear Pelicula" />
+          <button type="button" id="btnCleaner">Limpiar Formulario</button>
         </form>
       </div>
     </section>
-    
-    <script src="../public/films.js"></script>
 
+    <script src="../public/index.js"></script>
+    <script src="../public/films.js"></script>
   </body>
 </html>

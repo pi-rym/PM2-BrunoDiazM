@@ -9,13 +9,23 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./scripts/createMovie.js":
+/*!********************************!*\
+  !*** ./scripts/createMovie.js ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nfunction validateForm({\r\n  title, year, director, duration, genre, rate, poster,\r\n}) {\r\n  if (!title || !year || !director || !duration || !genre[0] || !rate || !poster)\r\n    return \"Todos los campos son obligatorios.\";\r\n  if (director.length < 5 || director.length > 30)\r\n    return \"Director debe contener entre 5 y 30 caracteres.\";\r\n  if (isNaN(rate) || parseFloat(rate) < 1 || parseFloat(rate) > 10)\r\n    return \"El rating debe ser un número entre 1 y 10.\";\r\n  return null;\r\n}\r\n\r\nfunction createMovie(event) {\r\n  event.preventDefault();\r\n\r\n  const title = document.getElementById(\"title\").value;\r\n  const year = document.getElementById(\"year\").value;\r\n  const director = document.getElementById(\"director\").value;\r\n  const duration = document.getElementById(\"duration\").value;\r\n  const genre = document.getElementById(\"genre\").value.split(\" \");\r\n  const rate = parseFloat(document.getElementById(\"rate\").value);\r\n  const poster = document.getElementById(\"poster\").value;\r\n\r\n\r\n  const newMovie = { title, year, director, duration, genre, rate, poster };\r\n\r\n\r\n  const error = validateForm(newMovie);\r\n  if (error) return alert(error);\r\n\r\n  // return alert('Datos correctos');\r\n\r\n  axios\r\n    .post(\"http://localhost:3000/movies\", newMovie)\r\n    .then(() => alert('Pelicula agregada.'))\r\n    .catch((error) => alert('Error al crear la pelicula.'));\r\n\r\n}\r\n\r\nmodule.exports = createMovie;\r\n\n\n//# sourceURL=webpack://front/./scripts/createMovie.js?");
+
+/***/ }),
+
 /***/ "./scripts/handler.js":
 /*!****************************!*\
   !*** ./scripts/handler.js ***!
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst renderCards = __webpack_require__(/*! ./renderCards */ \"./scripts/renderCards.js\");\r\n\r\nasync function getFilms() {\r\n  try {\r\n    const response = await axios.get(\r\n      \"https://students-api.up.railway.app/movies\"\r\n    );\r\n    renderCards(response.data);\r\n  } catch (error) {\r\n    console.error(\"Error al obtener las películas:\", error);\r\n  }\r\n}\r\n\r\nmodule.exports = getFilms;\r\n\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
+eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\nconst renderCards = __webpack_require__(/*! ./renderCards */ \"./scripts/renderCards.js\");\r\n\r\nasync function getFilms() {\r\n  try {\r\n    const response = await axios.get(\"http://localhost:3000/movies\");\r\n    renderCards(response.data);\r\n  } catch (error) {\r\n    console.error(\"Error al obtener las películas:\", error);\r\n  }\r\n}\r\n\r\n\r\nmodule.exports = getFilms;\r\n\r\n// handler.js\r\n// const axios = require(\"axios\");\r\n// const renderCards = require(\"./renderCards\");\r\n\r\n// async function getFilms() {\r\n//   try {\r\n//     const response = await axios.get(\r\n//       \"https://students-api.up.railway.app/movies\"\r\n//     );\r\n//     const films = response.data;\r\n//     const allMoviesContainer = document.getElementById('allMovies');\r\n//     if (allMoviesContainer) {\r\n//       renderCards(films);\r\n//     } else {\r\n//       console.error(\"El contenedor 'allMovies' no se encontró en el DOM.\");\r\n//     }\r\n//   } catch (error) {\r\n//     console.error(\"Error al obtener las películas:\", error);\r\n//   }\r\n// }\r\n\r\n// module.exports = getFilms;\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
 
 /***/ }),
 
@@ -25,7 +35,7 @@ eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// const createMovie = require(\"./createMovie\");\r\nconst getFilms = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\r\n\r\ngetFilms();\r\n\r\n// document.addEventListener('DOMContentLoaded', () => {\r\n//     const submit = document.getElementById(\"movieForm\");\r\n//     submit?.addEventListener(\"submit\", createMovie);\r\n// })\r\n\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const createMovie = __webpack_require__(/*! ./createMovie */ \"./scripts/createMovie.js\");\r\nconst getFilms = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    getFilms();\r\n    const submit = document.getElementById(\"movieForm\");\r\n    submit?.addEventListener(\"submit\", createMovie);\r\n    console.log(\"Formulario para completar\")\r\n})\r\n\r\n// const createMovie = require(\"./createMovie\");\r\n// const getFilms = require(\"./handler\");\r\n\r\n// document.addEventListener(\"DOMContentLoaded\", () => {\r\n//   getFilms();\r\n//   const submit = document.getElementById(\"movieForm\");\r\n//   submit.addEventListener(\"submit\", function (event) {\r\n//     event.preventDefault(); // Previene el envío del formulario por defecto\r\n//     createMovie(event); // Llama a la función createMovie\r\n//   });\r\n// });\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 

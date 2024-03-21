@@ -1,88 +1,42 @@
-const axios = require('axios')
+const axios = require("axios");
 
-const genres = ['Action', 'Fantasy', 'Comedy', 'Drama', 'Terror', 'Sci-fi', 'Adventure', 'Romance']
-
-const btnSubmit = document.getElementById("btnSubmit");
-const btnCleaner = document.getElementById("btnCleaner");
-const options = document.getElementById("options");
-
-const title = document.getElementById("title");
-const year = document.getElementById("year");
-const director = document.getElementById("director");
-const duration = document.getElementById("duration");
-const rate = document.getElementById("rate");
-const poster = document.getElementById("poster");
-
-function renderGenres() {
-    options.innerHTML = ''
-
-    for (const genre of genres) {
-        const input = document.createElement('input')
-        const label = document.createElement('label')
-
-        input.type = "checkbox"
-        input.id = genre
-        input.name = "genre[]"
-        input.value = genre 
-        
-        label.htmlFor = genre 
-        label.textContent = genre
-
-        options.appendChild(input)
-        options.appendChild(label)
-
-    }
-    
-    return options;
+function validateForm({
+  title, year, director, duration, genre, rate, poster,
+}) {
+  if (!title || !year || !director || !duration || !genre[0] || !rate || !poster)
+    return "Todos los campos son obligatorios.";
+  if (director.length < 5 || director.length > 30)
+    return "Director debe contener entre 5 y 30 caracteres.";
+  if (isNaN(rate) || parseFloat(rate) < 1 || parseFloat(rate) > 10)
+    return "El rating debe ser un número entre 1 y 10.";
+  return null;
 }
 
-renderGenres()
+function createMovie(event) {
+  event.preventDefault();
+
+  const title = document.getElementById("title").value;
+  const year = document.getElementById("year").value;
+  const director = document.getElementById("director").value;
+  const duration = document.getElementById("duration").value;
+  const genre = document.getElementById("genre").value.split(" ");
+  const rate = parseFloat(document.getElementById("rate").value);
+  const poster = document.getElementById("poster").value;
 
 
-function validateCheckboxes() {
-  const checkboxes = document.querySelectorAll('input[name="genre[]"]');
-
-  console.log(checkboxes);
+  const newMovie = { title, year, director, duration, genre, rate, poster };
 
 
-  for (const item of checkboxes) {
-    if (item.checked) {
-      item.classList.add("selected");
-      return true;
-    }
-  }
-}
+  const error = validateForm(newMovie);
+  if (error) return alert(error);
 
+  // return alert('Datos correctos');
 
-function handlerSubmit(event){
-    event.preventDefault()
-
-    const genres = validateCheckboxes()
-
-    if(![title.value, year.value, director.value, duration.value, rate.value, poster.value].every(Boolean)) return alert('Falta completar los campos')
-    
-    return alert('Pelicula enviada')
+  axios
+    .post("http://localhost:3000/movies", newMovie)
+    .then(() => alert('Pelicula agregada.'))
+    .catch((error) => alert('Error al crear la pelicula.'));
 
 }
 
-function cleanInputs() {
-    title.value = ''
-    year.value = ''
-    director.value = ''
-    duration.value = ''
-    genre.value = ''
-    rate.value = ''
-    poster.value = ''
-
-    const checkboxes = document.querySelectorAll('input[name="genre[]"]')
-
-    for (const item of checkboxes) {
-        item.checked = false;
-        item.classList.remove('selected')
-        
-    }
-}
-
-
-btnSubmit.addEventListener('click', handlerSubmit);
-btnCleaner.addEventListener('click', cleanInputs)
+module.exports = createMovie;
